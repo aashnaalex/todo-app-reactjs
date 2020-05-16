@@ -11,7 +11,7 @@ export class Layout extends Component {
     }
 
     addElement = () => {
-        
+        this.props.addElement(this.state.title)
         this.setState({title: ''})
     }
 
@@ -38,7 +38,7 @@ export class Layout extends Component {
                 </input>
                 <input 
                     type = "submit"
-                    onClick = {this.props.addElement.bind(this,this.state.title)} 
+                    onClick = {this.addElement} 
                     style = {{backgroundColor: "grey",
                         color:"white",
                         border: "1px solid lightcyan",

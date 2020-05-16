@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Todo from './Todo';
 
 export class TodoItem extends Component {
 
@@ -12,8 +11,8 @@ export class TodoItem extends Component {
             height: "27px",
             fontFamily: "sans-serif",
             fontSize: "14px",
-            textDecoration: !this.props.todo.completed? "none": "line-through",
-            // display: "flex"
+            textDecoration: this.props.todo.completed? "line-through" : "none"
+            
         }
         
     }

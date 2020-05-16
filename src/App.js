@@ -50,11 +50,11 @@ class App extends React.Component {
     var todo = {
       id,
       title,
-      completed: 'false'
+      completed: false
     }
     newTodo.push(todo)
     this.setState({ todos: newTodo})
-    console.log(todo.id)
+    console.log(todo.completed)
   }
 
   deleteElement = (id) => {
