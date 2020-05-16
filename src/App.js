@@ -8,6 +8,7 @@ import Layout from './Components/Layout';
 class App extends React.Component {
 
   state = {
+    loading: true,
     todos: [
       // {
       //   id: 1,
@@ -26,7 +27,12 @@ class App extends React.Component {
     ]
   }
 
+  constructor (props) {
+    super(props)
+    this.state.loading = true
+  }
   componentDidMount = () => {
+    this.state.loading = false
     axios.get('https://jsonplaceholder.typicode.com/todos?userId=1')
     .then(res => {
       const todoItems = res.data
@@ -62,7 +68,9 @@ class App extends React.Component {
   }
 
   render() {
+    
     return (
+      this.state.loading? (<h1>Loading...</h1> ) :
       <div className="App">
         <div className = "container">
           <Layout addElement = {this.addElement}></Layout>
